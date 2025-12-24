@@ -1,0 +1,31 @@
+meta:
+  schema-version: 0.1.0
+  created-on: "2025-12-24T15:44:34Z"
+  cli-version: 0.2.0
+projects:
+  9D98D42FEB30D54EB783893A319B7616C572ECC6_requirements.txt:
+    targets:
+      - requirements.txt
+    manager:
+      ecosystem: python
+      name: pip
+      version: 25.0.1
+    overrides:
+      PyYAML:
+        "5.1":
+          use: 5.1+sp1
+      setuptools:
+        71.1.0:
+          use: 71.1.0+sp1
+      cryptography:
+        39.0.1:
+          use: 39.0.1+sp1
+      Pillow:
+        9.3.0:
+          use: 9.3.0+sp1
+      PyJWT:
+        1.7.1:
+          use: 1.7.1+sp1
+      starlette:
+        0.27.0:
+          use: 0.27.0+sp1
