@@ -16,5 +16,12 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - uses: seal-community/cli-action@v1
+        with:
+          target: requirements.txt
+          mode: fix
+          fix_mode: remote
+          token: ${{ secrets.SEAL_TOKEN }}
+          project: python-template
       - name: Test
         run: python -m pytest
