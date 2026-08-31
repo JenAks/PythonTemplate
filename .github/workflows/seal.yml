@@ -1,0 +1,34 @@
+name: Seal Security
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: seal cli
+        uses: seal-community/cli-action@latest
+        with:
+          mode: fix
+          fix_mode: remote
+          token: ${{ secrets.SEAL_TOKEN }}
+          project: pythontemplate
+          target: requirements.txt
